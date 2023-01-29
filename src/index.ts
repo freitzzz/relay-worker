@@ -1,3 +1,5 @@
+import { default as relay } from './handler';
+
 /**
  * Welcome to Cloudflare Workers! This is your first worker.
  *
@@ -25,6 +27,6 @@ export default {
 		env: Env,
 		ctx: ExecutionContext
 	): Promise<Response> {
-		return new Response("Hello World!");
+		return relay(request);
 	},
 };
